@@ -11,8 +11,6 @@ services:
         - 5433:5433
         - 5444:5444
     volumes:
-      - type: volume
-        source: vertica-data
-        target: /data
+      - vertica-data:/data
 volumes:
   vertica-data:
