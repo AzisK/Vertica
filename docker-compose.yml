@@ -12,5 +12,6 @@ services:
         - 5444:5444
     volumes:
       - vertica-data:/data
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
 volumes:
   vertica-data:

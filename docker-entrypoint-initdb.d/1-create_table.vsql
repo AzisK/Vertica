@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS Fruits (
+    id IDENTITY PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    fruit VARCHAR(50) NOT NULL CHECK (fruit IN ('Apple', 'Orange')), -- Enforcing enum-like behavior
+    color VARCHAR(255) NOT NULL,
+    weight FLOAT NOT NULL,
+    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS Basket (
+    basket_id IDENTITY PRIMARY KEY,
+    description VARCHAR(255), 
+    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS BasketFruits (
+    basket_fruit_id IDENTITY PRIMARY KEY,
+    basket_id INT,
+    fruit_id INT,
+    FOREIGN KEY (basket_id) REFERENCES Basket(basket_id),
+    FOREIGN KEY (fruit_id) REFERENCES Fruits(id),
+    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
