@@ -4,7 +4,7 @@ Simply start the Vertica CE container by `docker-compose up` using the `docker-c
 
 Feel free to change variables in the YALM configuration. Few examples are elaborated below
 
-- Login credentials can be seen here and they can be changed
+- Login credentials can be seen here and they can be changed (`APP_DB_USER` and `APP_DB_PASSWORD`)
 - Feel free to change the version of the Vertica Docker image. More information can be found on the Vertica DockerHub [registry](https://hub.docker.com/r/vertica/vertica-ce).
 - Uncomment volume mapping `./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d` to run the init scripts when initiating the database
 
