@@ -6,6 +6,7 @@ Feel free to change variables in the YALM configuration. Few examples are elabor
 
 - Login credentials can be seen here and they can be changed
 - Feel free to change the version of the Vertica Docker image. More information can be found on the Vertica DockerHub [registry](https://hub.docker.com/r/vertica/vertica-ce).
+- Uncomment volume mapping `./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d` to run the init scripts when initiating the database
 
 ```zsh
 docker-compose.yml
